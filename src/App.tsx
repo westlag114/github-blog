@@ -6,6 +6,7 @@ import {
   gql,
   ApolloProvider,
 } from "@apollo/client";
+import Top from "./pages/top";
 
 const client = new ApolloClient({
   uri: "https://api.github.com/graphql",
@@ -28,9 +29,7 @@ client
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div>
-        <h2>Apollo App</h2>
-      </div>
+      <Top />
     </ApolloProvider>
   );
 }
