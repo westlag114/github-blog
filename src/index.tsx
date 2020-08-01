@@ -10,16 +10,17 @@ import {
 } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: "https://48p1r2roz4.sse.codesandbox.io",
+  uri: "https://api.github.com/graphql",
+  headers: { authorization: `Bearer ${process.env.REACT_APP_GITHUB_TOKEN}` },
   cache: new InMemoryCache(),
 });
 
 client
   .query({
     query: gql`
-      query GetRates {
-        rates(currency: "USD") {
-          currency
+      query {
+        viewer {
+          login
         }
       }
     `,
