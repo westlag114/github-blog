@@ -14,18 +14,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-client
-  .query({
-    query: gql`
-      query {
-        viewer {
-          login
-        }
-      }
-    `,
-  })
-  .then((result) => console.log(result));
-
 function App() {
   return (
     <ApolloProvider client={client}>
