@@ -1,4 +1,6 @@
 import gql from 'graphql-tag';
+import * as ApolloReactCommon from '@apollo/react-common';
+import * as ApolloReactHooks from '@apollo/react-hooks';
 export type Maybe<T> = T | null;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 /** All built-in and custom scalars, mapped to their actual values */
@@ -17770,10 +17772,10 @@ export type ViewerHovercardContext = HovercardContext & {
 };
 
 
-export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+export type GetloginUserQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_1_Query = (
+export type GetloginUserQuery = (
   { __typename?: 'Query' }
   & { viewer: (
     { __typename?: 'User' }
@@ -17781,3 +17783,36 @@ export type Unnamed_1_Query = (
   ) }
 );
 
+
+export const GetloginUserDocument = gql`
+    query GetloginUser {
+  viewer {
+    login
+  }
+}
+    `;
+
+/**
+ * __useGetloginUserQuery__
+ *
+ * To run a query within a React component, call `useGetloginUserQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetloginUserQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetloginUserQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetloginUserQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<GetloginUserQuery, GetloginUserQueryVariables>) {
+        return ApolloReactHooks.useQuery<GetloginUserQuery, GetloginUserQueryVariables>(GetloginUserDocument, baseOptions);
+      }
+export function useGetloginUserLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetloginUserQuery, GetloginUserQueryVariables>) {
+          return ApolloReactHooks.useLazyQuery<GetloginUserQuery, GetloginUserQueryVariables>(GetloginUserDocument, baseOptions);
+        }
+export type GetloginUserQueryHookResult = ReturnType<typeof useGetloginUserQuery>;
+export type GetloginUserLazyQueryHookResult = ReturnType<typeof useGetloginUserLazyQuery>;
+export type GetloginUserQueryResult = ApolloReactCommon.QueryResult<GetloginUserQuery, GetloginUserQueryVariables>;

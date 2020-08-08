@@ -17,6 +17,11 @@ module.exports = {
         "typescript-operations",
         "typescript-react-apollo",
       ],
+      config: {
+        withHooks: true,
+        withHOC: false,
+        withComponent: false,
+      },
     },
     "./graphql.schema.json": {
       plugins: ["introspection"],
