@@ -3,7 +3,7 @@ module.exports = {
     {
       "https://api.github.com/graphql": {
         headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_GITHUB_TOKEN}`,
+          Authorization: `Bearer 142a19ef23aa0cbbf28d0309eef20094c7339dca`,
         },
       },
     },

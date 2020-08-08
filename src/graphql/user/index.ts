@@ -4,7 +4,7 @@ export const GET_USER = gql`
   query GetloginUser {
     viewer {
       login
-      email
+      bio
     }
   }
 `;
