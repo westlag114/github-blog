@@ -1,20 +1,13 @@
 import React from "react";
-import { gql, useQuery } from "@apollo/client";
+import { useGetloginUserQuery } from "../../generated/graphql-client-api";
 
-const GET_USER = gql`
-  query {
-    viewer {
-      login
-    }
-  }
-`;
 const Top = () => {
-  const { loading, error, data } = useQuery(GET_USER, { variables: {} });
+  const { data, loading, error } = useGetloginUserQuery();
 
   if (loading) return <p>Loading ...</p>;
   if (error) return <p>error</p>;
 
-  return <p>{data.viewer.login}</p>;
+  return <p>{data?.viewer.login}</p>;
 };
 
 export default Top;
