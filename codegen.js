@@ -11,7 +11,7 @@ module.exports = {
   documents: "src/graphql/**/*.ts",
   overwrite: true,
   generates: {
-    "src/generated/types.d.tsx": {
+    "src/generated/graphql-client-api.tsx": {
       plugins: [
         "typescript",
         "typescript-operations",

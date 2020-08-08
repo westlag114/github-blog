@@ -1,5 +1,5 @@
 import React from "react";
-import { useGetloginUserQuery } from "../../generated/types.d";
+import { useGetloginUserQuery } from "../../generated/graphql-client-api";
 
 const Top = () => {
   const { data, loading, error } = useGetloginUserQuery();
