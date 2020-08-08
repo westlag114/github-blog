@@ -17779,7 +17779,7 @@ export type GetloginUserQuery = (
   { __typename?: 'Query' }
   & { viewer: (
     { __typename?: 'User' }
-    & Pick<User, 'login'>
+    & Pick<User, 'login' | 'email'>
   ) }
 );
 
@@ -17788,6 +17788,7 @@ export const GetloginUserDocument = gql`
     query GetloginUser {
   viewer {
     login
+    email
   }
 }
     `;
