@@ -7,7 +7,12 @@ const Top = () => {
   if (loading || !data) return <p>Loading ...</p>;
   if (error) return <p>error</p>;
 
-  return <p>{data.viewer.login}</p>;
+  return (
+    <div>
+      <p>{data.viewer.login}</p>
+      <p>{data.viewer.twitterUsername}</p>
+    </div>
+  );
 };
 
 export default Top;

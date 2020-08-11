@@ -17779,7 +17779,7 @@ export type GetloginUserQuery = (
   { __typename?: 'Query' }
   & { viewer: (
     { __typename?: 'User' }
-    & Pick<User, 'login' | 'bio'>
+    & Pick<User, 'login' | 'bio' | 'twitterUsername'>
   ) }
 );
 
@@ -17789,6 +17789,7 @@ export const GetloginUserDocument = gql`
   viewer {
     login
     bio
+    twitterUsername
   }
 }
     `;
